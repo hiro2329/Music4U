@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "TheJamsil5Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  height: 600vh;
+  width: 100vw;
+  font-family: "LINESeedKR-Bd", "TheJamsil5Bold", sans-serif;
+  background-color: #1d1e22;
+  color: white;
+}
+
+.slider-section {
+  height: 22vh;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.wheel {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300vw;
+  height: 300vw;
+  max-width: 2000px;
+  max-height: 2000px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* 낮은 z-index 설정 */
+  pointer-events: auto; /* wheel의 클릭 이벤트를 허용 */
+}
+
+.wheel__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  pointer-events: auto; /* 카드 클릭 이벤트를 허용 */
+  z-index: 2; /* 카드가 music-controller 아래에 있지 않도록 설정 */
+}
+
+.wheel img {
+  width: 100%;
+  pointer-events: none;
+  z-index: 999;
+  cursor: pointer;
+  position: absolute;
+  will-change: transform;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 1rem;
+  z-index: 10;
+}
+
+.test1 {
+  display: flex; /* 좌우 배치를 위한 flexbox */
+  width: 70%;
+  height: 100%;
+}
+
+.testImg {
+  flex: 3; /* 좌측 영역 비율 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testImg img {
+  width: 40vw;
+  height: 40vw;
+  max-height: 450px;
+  max-width: 450px;
+  /* border-radius: 50%; */
+  object-fit: cover;
+}
+
+/* 데스크탑 화면 (1200px 이상) */
+@media (min-width: 1200px) {
+  .testImg img {
+    width: 30vw;
+    height: 30vw;
+    max-height: 600px;
+    max-width: 600px;
+  }
+}
+
+/* 태블릿 화면 (1024px 이하) */
+@media (max-width: 1024px) {
+  .testImg img {
+    width: 50vw;
+    height: 50vw;
+    max-height: 400px;
+    max-width: 400px;
+  }
+}
+
+/* 모바일 화면 (768px 이하) */
+@media (max-width: 768px) {
+  .testImg img {
+    width: 60vw;
+    height: 60vw;
+    max-height: 300px;
+    max-width: 300px;
+  }
+}
+
+.testInfo {
+  flex: 2; /* 우측 영역 비율 */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.music-controller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  z-index: 10; /* 높은 z-index 설정 */
+  position: relative; /* z-index 적용 */
+  pointer-events: auto; /* music-controller의 클릭 이벤트를 허용 */
+  background-color: grey;
+}
+
+.music-controller button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.music-controller button:hover {
+  background-color: rgb(79, 79, 79);
+}
+
+.testInfo {
+  visibility: hidden; /* 기본적으로 숨김 */
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
+  opacity: 0; /* 숨길 때 투명도 적용 */
+}
+
+.testInfo.visible {
+  visibility: visible;
+  opacity: 1; /* 보일 때 투명도 제거 */
+}
+
+/* SCROLL DOWN */
+/* .scroll-down {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  overflow: visible;
+}
+
+.scroll-down .arrow {
+  position: relative;
+  top: 0px;
+  margin: 0 auto;
+  width: 15px;
+  height: 15px;
+  filter: invert(1);
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+  background-size: contain;
+} */
