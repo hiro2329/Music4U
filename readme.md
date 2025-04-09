@@ -1,5 +1,7 @@
 # 데스크셋업에 잘 어울리는 🎧Music4U🎧
 
+<img src="./images/music4U.png" alt="스크린샷 1" width="100%">
+
 ## **Music4U**는 Spotify API와 Web Playback SDK를 활용하여 사용자가 음악을 탐색하고 재생할 수 있는 웹 애플리케이션입니다. 직관적인 UI와 부드러운 애니메이션을 통해 음악 감상 경험을 한층 더 향상시킵니다.
 
 _(현재 로그인 페이지는 구현되어 있지 않으며, 추후 업데이트할 예정입니다. Spotify Premium 유저가 직접 토큰을 입력하면 실행 가능합니다.)_
