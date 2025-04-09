@@ -9,6 +9,10 @@ _(현재 로그인 페이지는 구현되어 있지 않으며, 추후 업데이�
 - **[Music4U Notion](https://adorable-panama-924.notion.site/Music4U-1cf8c3bce0358015b877c67139407877?pvs=4)**  
   프로젝트의 상세한 설명과 개발 과정을 Notion 페이지에서 확인할 수 있습니다.
 
+- **[Figma 발표](https://www.figma.com/deck/hpU7gbX2wRA1NubAQYYupG/Music4U?node-id=1-32&t=82T9sRj59boFSyOu-1)**  
+  프로젝트의 디자인 및 발표 자료를 Figma에서 확인할 수 있습니다.
+
+
 ## 📸 프로젝트 스크린샷
 
 <div style="display: flex; justify-content: space-between;">
